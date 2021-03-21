@@ -43,7 +43,11 @@ jobs:
         #run: MSBuild /t:clean
         run: $a = "Database1.sqlproj /t:build"
 
+      - name: x
+        run: $build="""$msbuild""" + $a
 
+      - name: y
+        run: Invoke-Expression $build
 
 
 
