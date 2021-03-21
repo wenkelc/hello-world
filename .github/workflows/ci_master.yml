@@ -44,7 +44,7 @@ jobs:
         run: $a = "Database1.sqlproj /t:build"
 
       - name: x
-        run: $build="""$msbuild""" + $a
+        run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
 
       - name: y
         run: Invoke-Expression $build
