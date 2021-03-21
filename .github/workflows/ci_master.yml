@@ -43,8 +43,7 @@ jobs:
         #run: MSBuild /t:clean
         run: $a = "Database1.sqlproj /t:build"
 
-      - name: Starte Visual Studio Step 2
-        #run: msbuild /t:build
+
 
 
 
