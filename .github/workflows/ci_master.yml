@@ -34,7 +34,17 @@ jobs:
           echo test, and deploy your project.
       - name: VS Code started
         run: mkdir xxxx
-      # Test
+      
+      - name: Füge Step hinzu
+        run: set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
+      
+      - name: Starte Visual Studio Step 1
+        run: msbuild /t:clean
+
+      - name: Starte Visual Studio Step 2
+        run: msbuild /t:build
+
+
 
 
 #set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
