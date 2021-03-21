@@ -36,13 +36,15 @@ jobs:
         run: mkdir xxxx
       
       - name: Füge Step hinzu
-        run: set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
+        #run: set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
+        $msbuild = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe"
       
       - name: Starte Visual Studio Step 1
-        run: MSBuild /t:clean
+        #run: MSBuild /t:clean
+        $a = "Database1.sqlproj /t:build"
 
       - name: Starte Visual Studio Step 2
-        run: msbuild /t:build
+        #run: msbuild /t:build
 
 
 
