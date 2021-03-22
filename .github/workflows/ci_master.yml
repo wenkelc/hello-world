@@ -40,7 +40,7 @@ jobs:
         
       #  run: sqlpackage /a:Publish /sf:Database1.dacpac /tcs:"Data Source=.\SQLEXPRESS; Initial Catalog=MyApp;Integrated Security=true"
       #  # C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac
-        run: SqlPackage.exe /Action:Publish /SourceFile:"C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac" /TargetConnectionString:"data source=localhost;initial catalog=cw;User ID=sa;Password=Herbst0009"
+        run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150\SqlPackage.exe" /Action:Publish /SourceFile:"C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac" /TargetConnectionString:"data source=localhost;initial catalog=cw;User ID=sa;Password=Herbst0009"
 
 
       # Runs a single command using the runners shell
