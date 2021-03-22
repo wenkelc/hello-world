@@ -52,7 +52,7 @@ jobs:
       - name: Output
         run: echo $build
 
-      - name: y
+      - name: yy
         run: echo $a
     #    run: Invoke-Expression $build
 
