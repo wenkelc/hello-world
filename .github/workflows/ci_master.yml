@@ -47,10 +47,10 @@ jobs:
         run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
 
       - name: Output
-        run: Write-Host $build
+        run: echo $build
 
       - name: y
-        run: Write-Host $a
+        run: echo $a
     #    run: Invoke-Expression $build
 
 
