@@ -43,7 +43,7 @@ jobs:
       - name: Starte Visual Studio Step 1
         #run: MSBuild /t:clean
         run: $a = "Database1.sqlproj /t:build"
-        run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
+        #run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
 
       - name: x
         run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
