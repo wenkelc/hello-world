@@ -16,44 +16,57 @@ jobs:
   build:
     # The type of runner that the job will run on
     #runs-on: ubuntu-latest
-    runs-on: self-hosted
+    #runs-on: self-hosted
+    runs-on: windows-latest
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Build Solution
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        
+        run: msbuild /t:build
+        #msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+
+
+
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+#      - name: Run a one-line script
+#        run: echo Hello, world!
 
       # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-      - name: VS Code started
-        run: mkdir xxxxyyyyzzzzaaaa
+#      - name: Run a multi-line script
+#        run: |
+#          echo Add other actions to build,
+#          echo test, and deploy your project.
+#      - name: VS Code started
+#        run: mkdir xxxxyyyyzzzzaaaa
       
-      - name: Füge Step hinzu
+#      - name: Füge Step hinzu
         #run: set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
-        shell: cmd
-        run: echo "aaaaa"
+ #       shell: cmd
+  #      run: echo "aaaaa"
         #$msbuild = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe"
       
-      - name: Starte Visual Studio Step 1
+#      - name: Starte Visual Studio Step 1
         #run: MSBuild /t:clean
-        run: $a = "Database1.sqlproj /t:build"
+ #       run: $a = "Database1.sqlproj /t:build"
         #run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
 
-      - name: x
-        run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
+#      - name: x
+#        run: $build="C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\msbuild.exe " + $a
 
-      - name: Output
-        run: echo $build
+#      - name: Output
+#        run: echo $build
 
-      - name: yy
-        run: echo $a
+#      - name: yy
+#        run: echo $a
     #    run: Invoke-Expression $build
 
 
