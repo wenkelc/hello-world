@@ -33,7 +33,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
       - name: VS Code started
-        run: mkdir xxxxyyyyzzzz
+        run: mkdir xxxxyyyyzzzzaaaa
       
       - name: Füge Step hinzu
         #run: set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin"
