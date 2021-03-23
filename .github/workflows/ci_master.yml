@@ -23,8 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      -name: Secrets
-        env: 
+      - name: Secrets
+        with:
           SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
