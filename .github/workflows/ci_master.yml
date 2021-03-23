@@ -29,12 +29,12 @@ jobs:
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
 
-      - name: Secrets
-        with:
-          SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
+#      - name: Secrets
+#        with:
+#          SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
 
-      - name: Output secret
-        run: echo "$env:SECRETCW"
+#      - name: Output secret
+#        run: echo "$env:SECRETCW"
 
 
 
