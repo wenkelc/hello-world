@@ -25,22 +25,28 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1
+      - env: 
+        SECRETCW: ${{ secrets.SuperSecret }}
 
-      - name: Build Solution
-        working-directory: ${{env.GITHUB_WORKSPACE}}
+      - name: Output secret
+        run: echo "$env:SUPER_SECRET"
+
+#      - name: Add MSBuild to PATH
+#        uses: microsoft/setup-msbuild@v1
+
+#      - name: Build Solution
+#        working-directory: ${{env.GITHUB_WORKSPACE}}
         
-        run: msbuild /t:build -m
+#        run: msbuild /t:build -m
         #-m alle verfügbaren Kerne
         #msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-      - name: Deploy Solution
+#      - name: Deploy Solution
       #  working-directory: ${{env.GITHUB_WORKSPACE}}
         
       #  run: sqlpackage /a:Publish /sf:Database1.dacpac /tcs:"Data Source=.\SQLEXPRESS; Initial Catalog=MyApp;Integrated Security=true"
       #  # C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac
-        run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150\SqlPackage.exe" /Action:Publish /SourceFile:"C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac" /TargetConnectionString:"data source=localhost;initial catalog=cw;User ID=sa;Password=Herbst0009"
+#        run: "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\Microsoft\SQLDB\DAC\150\SqlPackage.exe" /Action:Publish /SourceFile:"C:\actions-runner\_work\hello-world\hello-world\Database1\bin\Debug\Database1.dacpac" /TargetConnectionString:"data source=localhost;initial catalog=cw;User ID=sa;Password=Herbst0009"
 
 
       # Runs a single command using the runners shell
