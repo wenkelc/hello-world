@@ -24,7 +24,7 @@ jobs:
     steps:
 
       -name: Secrets
-        - env: 
+        env: 
           SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
 
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
