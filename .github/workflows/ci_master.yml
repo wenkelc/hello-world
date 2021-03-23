@@ -22,11 +22,12 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
 
       - env: 
         SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
+
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
 
 #      - name: Output secret
 #        run: echo "$env:SUPER_SECRET"
