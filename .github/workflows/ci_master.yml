@@ -26,6 +26,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1
+
       - name: Secrets
         with:
           SECRETCW: ${{ secrets.AD_CAIRO_E1086 }}
@@ -33,8 +36,7 @@ jobs:
       - name: Output secret
         run: echo "$env:SECRETCW"
 
-#      - name: Add MSBuild to PATH
-#        uses: microsoft/setup-msbuild@v1
+
 
 #      - name: Build Solution
 #        working-directory: ${{env.GITHUB_WORKSPACE}}
